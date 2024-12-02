@@ -14,6 +14,7 @@ async def on_start(message: Message, bot: Bot):
 
 @handlers_router.message(Command('help'))
 async def help_command(message: Message):
+    print(f'{message.from_user.id} прислал {message.text}')
     await message.reply(
         f'{message.from_user.full_name} ТРЕБУЕТ ПОМОЩИ!'
     )
