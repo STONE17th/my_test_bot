@@ -10,3 +10,10 @@ async def on_start(message: Message, bot: Bot):
     await message.answer(
         f'Привет, {message.from_user.full_name}!',
     )
+
+
+@handlers_router.message(Command('help'))
+async def help_command(message: Message):
+    await message.reply(
+        f'{message.from_user.full_name} ТРЕБУЕТ ПОМОЩИ!'
+    )
